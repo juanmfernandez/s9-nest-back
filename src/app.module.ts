@@ -28,7 +28,6 @@ import { MessagesModule } from './messages/messages.module';
     AuthModule,
     UsersModule,
     ConfigModule.forRoot({
-      envFilePath: `${process.env.NODE_ENV}.env`,
       load: [DotEnvConfig],
     }),
     EventEmitterModule.forRoot(),
