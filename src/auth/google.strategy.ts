@@ -11,7 +11,8 @@ export class GoogleStrategy extends PassportStrategy(Strategy) {
     super({
       clientID: process.env.GOOGLE_CLIENT_ID,
       clientSecret: process.env.GOOGLE_SECRET,
-      callbackURL: 'http://localhost:5173/',
+      //callbackURL: 'http://localhost:5173/',
+      callbackURL: 'https://trueka-app-front-c6dsm.ondigitalocean.app/',
       scope: ['email', 'profile'],
     });
   }
