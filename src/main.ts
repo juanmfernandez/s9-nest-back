@@ -5,6 +5,7 @@ import * as dotenv from 'dotenv';
 
 async function bootstrap() {
   dotenv.config();
+  console.log(process.env.NODE_ENV);
   const app = await NestFactory.create(AppModule, { cors: true });
   app.setGlobalPrefix('api/v1');
 
