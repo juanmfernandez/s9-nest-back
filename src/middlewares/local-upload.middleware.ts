@@ -42,6 +42,7 @@ export class LocalUploadMiddleware implements NestMiddleware {
   use(req: Request, res: Response, next: NextFunction) {
     this.upload(req, res, function (err) {
       if (err) {
+        console.log("pictures error: ", err, err.message)
         throw new HttpException(err.message, HttpStatus.BAD_REQUEST);
       } else {
         next();
