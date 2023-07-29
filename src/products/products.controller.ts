@@ -48,6 +48,7 @@ export class ProductsController {
     }),
   )
   create(@Body() createProductDto: CreateProductDto) {
+    console.log("createProductDto error: ", createProductDto)
     return this.productsService.create(createProductDto);
   }
 

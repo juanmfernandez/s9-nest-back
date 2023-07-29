@@ -18,7 +18,7 @@ export class ProductsService {
   async create(createProductDto: CreateProductDto) {
     try {
       const { lat, lon, ...productData } = createProductDto;
-
+      console.log("create productData: ", productData)
       const newProduct = this.productModel.create({
         ...productData,
         geolocation: { lat, lon },
@@ -50,6 +50,7 @@ export class ProductsService {
         newItem: await newProduct,
       };
     } catch (error) {
+      console.log("create HttpException error: ", error, error.message)
       throw new HttpException(error.message, HttpStatus.BAD_REQUEST);
     }
   }
