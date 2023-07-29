@@ -8,8 +8,6 @@ async function bootstrap() {
   console.log(process.env.JWT_SECRET);
   const app = await NestFactory.create(AppModule, { cors: true });
   app.setGlobalPrefix('api/v1');
-  app.useBodyParser('json', { limit: '15mb' });
-  app.useBodyParser('urlencoded', { limit: '15mb' });
 
   // Documentation
   const config = new DocumentBuilder()
